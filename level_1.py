@@ -35,10 +35,20 @@ player_y = screen_height - player_height - border_thickness
 player_speed = 5
 player_vel_y = 0
 onground = False
+player_color = RED
+
+# Jump powerup properties
+jump_width, jump_height = 20, 20
+jump_x = platform_x + 100
+jump_y = platform_y + player_height
+jump_color = YELLOW
+draw_jump = True
+jump_active = False
+
 
 # Force variables
 gravity = 0.5
-jump_power = -20
+jump_power = -5
 
 # Portal properties
 portal_width = 40
@@ -86,21 +96,20 @@ while running:
         player_vel_y = 0
         onground = False
 
-    # def LEVELCOMPLETED():
-    #   for event in pygame.event.get():
-        #   if event.type == pygame.QUIT:
-        #        running = False
-        # text_surface = font.render("LEVEL COMPLETED!", True, BLACK)
-        # text_x = (screen_width - text_surface.get_width()) // 2
-        # screen.blit(text_surface, (text_x, text_y))
-        # pygame.display.flip()
-        # pygame.time.delay(2000) # Pause for 2 seconds
-        #running = False
+    # Level completed
+    def LEVELCOMPLETE():
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT():
+                running = False
+        pygame.display.flip()
+        pygame.time.delay(2000)
+        running = False
 
-
-    # Ground collision logic
+    # Rects
     player_rect = pygame.Rect(player_x, player_y, player_width, player_height)
     platform_rect = pygame.Rect(platform_x, platform_y, platform_width, platform_height)
+    jump_rect = pygame.Rect(jump_x, jump_y, jump_width, jump_height)
+    portal_rect = pygame.Rect(portal_x, portal_y, portal_width, portal_height)
 
 
     # Platform collision logic
@@ -116,13 +125,17 @@ while running:
             player_vel_y = 0
             onground = False
 
+    # Check for jump powerup collision
+    if player_rect.colliderect(jump_rect):
+        jump_active = True
+        draw_jump = False
+        jump_power = -15
+            
     # Check for portal collision
-    portal_rect = pygame.Rect(portal_x, portal_y, portal_width, portal_height)
     if player_rect.colliderect(portal_rect):
-        pygame.display.flip()
-        pygame.time.delay(500) # Pause for half a second
+        LEVELCOMPLETE()
         running = False
-    
+
     screen.fill(BLUE)
     # Draw border
     pygame.draw.rect(screen, GRAY, (0, 0, screen_width, screen_height), border_thickness)
@@ -131,9 +144,10 @@ while running:
     # Draw portal
     pygame.draw.rect(screen, portal_color, (portal_x, portal_y, portal_width, portal_height))
     # Draw player
-    pygame.draw.rect(screen, RED, (player_x, player_y, player_width, player_height))
-    player_rect = pygame.Rect(player_x, player_y, player_width, player_height)
-
+    pygame.draw.rect(screen, player_color, (player_x, player_y, player_width, player_height))
+    # Draw jump powerup
+    if draw_jump:
+        pygame.draw.rect(screen, jump_color, (jump_x, jump_y, jump_width, jump_height))
     pygame.display.flip()
     clock.tick(60)
 
