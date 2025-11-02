@@ -12,9 +12,14 @@ def main_menu():
     pygame.display.set_caption("Main Menu")
 
     # Colors
-    BLUE = (0, 0, 255)
-    WHITE = (255, 255, 255)
-    BLACK = (0, 0, 0)
+    WHITE = ('#ADF5FF')
+    BLACK = ('#13293D')
+    GRAY = ('#8F9491')
+    GREEN = ('#519872')
+    BLUE = ('#1B98E0')
+    RED = ('#D55672')
+    YELLOW = ('#247BA0')
+    PURPLE = ('#13293D')
 
     # Font
     font = pygame.font.Font(None, 50)

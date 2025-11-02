@@ -8,14 +8,14 @@ def run_level_1(screen):
     border_thickness = 5
 
 # Colors
-    WHITE = (255, 255, 255)
-    BLACK = (0, 0, 0)
-    GRAY = (200, 200, 200)
-    GREEN = (0, 255, 0)
-    BLUE = (0, 0, 255)
-    RED = (255, 0, 0)
-    YELLOW = (255, 255, 0)
-    PURPLE = (160, 32, 240)
+    WHITE = ('#ADF5FF')
+    BLACK = ('#13293D')
+    GRAY = ('#8F9491')
+    GREEN = ('#104911')
+    BLUE = ('#1B98E0')
+    RED = ('#D55672')
+    YELLOW = ('#FFD449')
+    PURPLE = ('#13293D')
 
 # Platform properties (unmovable rectangle)
     platform_width = screen_width // 2
