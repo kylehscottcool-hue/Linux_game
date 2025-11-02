@@ -1,0 +1,4 @@
+11/02/2025:
+Posting on a Sunday. Last week, I installed linux, and started creating this game. You can find a more detailed description of how things went down in the README.md file. I created the base of the first 2 levels on Saturday, 11/01/2025. Today, I created a nicer color palette, and a main page where you can select levels.
+
+I plan to add a menu button in the top right of each level that will bring you back to the main screen, and I also plan to add a third level with a slanted platform that you will slide down if you don't jump repeatedly, or use a powerup. I can't decide between powerup and jumping, but since this game is based on powerups, I will probably go with the powerup. I also plan to add a page detailing every powerup, and element in the game as a basic tutorial. Tomorrow is Monday, so there probably won't be any major changes, maybe some tweaks and bug fixes.
