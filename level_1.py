@@ -1,12 +1,9 @@
 import pygame
 import level_2
+import main_screen
 
 def run_level_1(screen):
     screen_width, screen_height = screen.get_size()
-
-# Border thickness
-    border_thickness = 5
-
 # Colors
     WHITE = ('#ADF5FF')
     BLACK = ('#13293D')
@@ -16,6 +13,20 @@ def run_level_1(screen):
     RED = ('#D55672')
     YELLOW = ('#FFD449')
     PURPLE = ('#13293D')
+
+# Border
+    border_thickness = 5
+    border_color = GRAY
+
+# Font
+    font = pygame.font.Font(None, 20)
+    level_font = pygame.font.Font(None, 50)
+
+# Menu Button
+    menu_width, menu_height = 50, 30
+    menu_x = screen_width - border_thickness - menu_width
+    menu_y = border_thickness
+    menu_color = WHITE
 
 # Platform properties (unmovable rectangle)
     platform_width = screen_width // 2
@@ -63,6 +74,9 @@ def run_level_1(screen):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if menu_button.collidepoint(event.pos):
+                    main_screen.main_menu()
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_d]:
@@ -99,6 +113,8 @@ def run_level_1(screen):
         platform_rect = pygame.Rect(platform_x, platform_y, platform_width, platform_height)
         portal_rect = pygame.Rect(portal_x, portal_y, portal_width, portal_height)
         jump_rect = pygame.Rect(jump_x, jump_y, jump_width, jump_height)
+        menu_button = pygame.Rect(menu_x, menu_y, menu_width, menu_height)
+        level_rect = pygame.Rect(screen_width // 2 - 100, border_thickness, 100, 100)
 
         # Platform collision logic
         if player_rect.colliderect(platform_rect):
@@ -123,7 +139,11 @@ def run_level_1(screen):
             jump_active = True
             jump_power = -18
 
-
+        # Text
+        menu_button_text = font.render("MENU", True, BLACK)
+        level_text = level_font.render("LEVEL 1", True, BLACK)
+            
+        # Drawing
         screen.fill(BLUE)
         # Draw border
         pygame.draw.rect(screen, GRAY, (0, 0, screen_width, screen_height), border_thickness)
@@ -133,6 +153,11 @@ def run_level_1(screen):
         pygame.draw.rect(screen, portal_color, (portal_x, portal_y, portal_width, portal_height))
         # Draw player
         pygame.draw.rect(screen, player_color, (player_x, player_y, player_width, player_height))
+        # Draw menu button
+        pygame.draw.rect(screen, menu_color, menu_button)
+        screen.blit(menu_button_text, (menu_button.x + 5, menu_button.y + 7))
+        # Draw level Text
+        screen.blit(level_text, (level_rect.x + 40, level_rect.y + 10))
         # Draw jump powerup
         if draw_jump:
             pygame.draw.rect(screen, jump_color, (jump_x, jump_y, jump_width, jump_height))
