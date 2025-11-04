@@ -7,3 +7,6 @@ I plan to add a menu button in the top right of each level that will bring you b
 I couldn't wait, so I added a menu button, text at the top that displays the level, and a back button that goes to the previous level.
 
 I am looking forward to creating level 3, and making it to where you cannot access a level until you have completed the level before it.
+
+11/03/2025 8:00PM:
+This commit just added a Universal.py file in order for there to be a quick and easy copy and paste for any new level that I create. I know that this won't work for any menu files, but it will have to do.
