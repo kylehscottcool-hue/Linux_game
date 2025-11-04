@@ -1,9 +1,9 @@
+
 # This is for varibales that will be used accross all of the levels and screens
 # Indent means it is meant to go inside of the main game loop
 
 # imports
 import pygame
-import universal
 import main_screen
 
 # Colors
@@ -44,7 +44,10 @@ menu_x = screen_width - border_thickness - menu_width
 menu_y = border_thickness
 menu_color = WHITE
 
-
+# Final variables
+running = True
+clock = pygame.time.Clock()
+while running:
 # Input detection
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -111,5 +114,4 @@ menu_color = WHITE
 
 # Quiting
     pygame.display.flip()
-    clock.tick(60)
-
+ 

@@ -10,3 +10,9 @@ I am looking forward to creating level 3, and making it to where you cannot acce
 
 11/03/2025 8:00PM:
 This commit just added a Universal.py file in order for there to be a quick and easy copy and paste for any new level that I create. I know that this won't work for any menu files, but it will have to do.
+
+11/03/2025 9:30PM:
+This commit added more integration and universal use for the Unversal.py file. We also added the level_3.py file that is a level with 2 platforms, and a key to unlock the portal.
+
+11/04/2025 5:45PM:
+This commit adds 2 new levels. Level 3 adds multiple platforms and a key. Level 4 blends all powerups and features from previous levels into one level. These changes are great, and level 4 uses an abs collision system.

@@ -3,7 +3,12 @@ import level_2
 import main_screen
 
 def run_level_1(screen):
-    screen_width, screen_height = screen.get_size()
+
+    screen_width = 640
+    screen_height = 480
+    screen = pygame.display.set_mode((screen_width, screen_height))
+    pygame.display.set_caption("Level 1")
+
 # Colors
     WHITE = ('#ADF5FF')
     BLACK = ('#13293D')

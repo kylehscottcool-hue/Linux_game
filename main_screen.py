@@ -1,6 +1,8 @@
 import pygame
 import level_1
 import level_2
+import level_3
+import level_4
 
 def main_menu():
     pygame.init()
@@ -25,9 +27,11 @@ def main_menu():
     font = pygame.font.Font(None, 50)
 
     # Buttons
-    level_1_button = pygame.Rect(220, 150, 200, 50)
-    level_2_button = pygame.Rect(220, 250, 200, 50)
-    quit_button = pygame.Rect(220, 350, 200, 50)
+    level_1_button = pygame.Rect(220, 75, 200, 50)
+    level_2_button = pygame.Rect(220, 150, 200, 50)
+    level_3_button = pygame.Rect(220, 225, 200, 50)
+    level_4_button = pygame.Rect(220, 300, 200, 50)
+    quit_button = pygame.Rect(220, 375, 200, 50)
 
     running = True
     while running:
@@ -36,10 +40,13 @@ def main_menu():
                 running = False
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if level_1_button.collidepoint(event.pos):
-                    if level_1.run_level_1(screen):
-                        level_2.run_level_2(screen)
+                    level_1.run_level_1(screen)
                 if level_2_button.collidepoint(event.pos):
                     level_2.run_level_2(screen)
+                if level_3_button.collidepoint(event.pos):
+                    level_3.run_level_3(screen)
+                if level_4_button.collidepoint(event.pos):
+                    level_4.run_level_4(screen)
                 if quit_button.collidepoint(event.pos):
                     running = False
 
@@ -48,20 +55,24 @@ def main_menu():
 
         pygame.draw.rect(screen, WHITE, level_1_button)
         pygame.draw.rect(screen, WHITE, level_2_button)
+        pygame.draw.rect(screen, WHITE, level_3_button)
+        pygame.draw.rect(screen, WHITE, level_4_button)
         pygame.draw.rect(screen, WHITE, quit_button)
 
         level_1_text = font.render("Level 1", True, BLACK)
         level_2_text = font.render("Level 2", True, BLACK)
+        level_3_text = font.render("Level 3", True, BLACK)
+        level_4_text = font.render("Level 4", True, BLACK)
         quit_button_text = font.render("  QUIT", True, BLACK)
 
         screen.blit(level_1_text, (level_1_button.x + 40, level_1_button.y + 10))
         screen.blit(level_2_text, (level_2_button.x + 40, level_2_button.y + 10))
+        screen.blit(level_3_text, (level_3_button.x + 40, level_3_button.y + 10))
+        screen.blit(level_4_text, (level_4_button.x + 40, level_4_button.y + 10))
         screen.blit(quit_button_text, (quit_button.x + 40, quit_button.y + 10))
 
-
         pygame.display.flip()
-
     pygame.quit()
-
 if __name__ == '__main__':
-    main_menu()
+            main_menu()
+
