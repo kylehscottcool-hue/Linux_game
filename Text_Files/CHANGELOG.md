@@ -16,3 +16,6 @@ This commit added more integration and universal use for the Unversal.py file. W
 
 11/04/2025 5:45PM:
 This commit adds 2 new levels. Level 3 adds multiple platforms and a key. Level 4 blends all powerups and features from previous levels into one level. These changes are great, and level 4 uses an abs collision system.
+
+11/05/2025 7:23PM:
+This commit added the file "level_5.py", but didn't really do anything inside of the file. I am still trying to figure out how to add sloped platforms, as that is the idea for this next level.
