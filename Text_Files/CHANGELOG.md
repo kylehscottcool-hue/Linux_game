@@ -19,3 +19,6 @@ This commit adds 2 new levels. Level 3 adds multiple platforms and a key. Level 
 
 11/05/2025 7:23PM:
 This commit added the file "level_5.py", but didn't really do anything inside of the file. I am still trying to figure out how to add sloped platforms, as that is the idea for this next level.
+
+11/06/2025 7:46PM:
+This commit adds some new logic to "level_5.py", but also didn't really add much. These slopes and collision logic is confusing, especially because I am teaching myself.
