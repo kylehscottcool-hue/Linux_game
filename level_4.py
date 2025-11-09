@@ -138,7 +138,6 @@ def run_level_4(screen):
             player_vel_x = -player_speed
         else:
             player_vel_x = 0
-
         if keys[pygame.K_w] and onground:
             player_vel_y = jump_power
             onground = False
@@ -146,6 +145,10 @@ def run_level_4(screen):
             player_y += player_speed
         if keys[pygame.K_ESCAPE]:
             running = False
+        if keys[pygame.K_m]:
+            main_screen.main_menu()
+        if keys[pygame.K_b]:
+            level_3.run_level_3()
 
 # Apply velocity and friction
         player_x += player_vel_x

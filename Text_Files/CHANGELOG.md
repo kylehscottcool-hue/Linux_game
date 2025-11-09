@@ -22,3 +22,6 @@ This commit added the file "level_5.py", but didn't really do anything inside of
 
 11/06/2025 7:46PM:
 This commit adds some new logic to "level_5.py", but also didn't really add much. These slopes and collision logic is confusing, especially because I am teaching myself.
+
+11/08/2025 5:59:
+This commit added new example files from gemini, and now you can press "b" to go back, and "m" to go back to the menu
