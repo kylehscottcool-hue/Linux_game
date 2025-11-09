@@ -106,9 +106,9 @@ def run_level_2(screen):
         if keys[pygame.K_ESCAPE]:
             running = False
         if keys[pygame.K_m]:
-            main_screen.main_menu():
+            main_screen.main_menu()
         if keys[pygame.K_b]:
-            level_1.run_level_1(screen):
+            level_1.run_level_1(screen)
 
         
         # Gravity application
